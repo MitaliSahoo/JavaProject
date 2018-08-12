@@ -5,6 +5,7 @@
  */
 package com.mitali;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -22,6 +23,7 @@ public class Project extends javax.swing.JFrame {
      */
     public Project() {
         initComponents();
+        getContentPane().setBackground(Color.gray);
     }
 
     /**
@@ -40,18 +42,32 @@ public class Project extends javax.swing.JFrame {
         balance = new javax.swing.JButton();
         transfer = new javax.swing.JButton();
         img = new javax.swing.JLabel();
+        img2 = new javax.swing.JLabel();
+        img3 = new javax.swing.JLabel();
+        img4 = new javax.swing.JLabel();
+        img5 = new javax.swing.JLabel();
+        img7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(51, 255, 255));
+        setBackground(new java.awt.Color(0, 0, 255));
+        setMinimumSize(new java.awt.Dimension(1350, 700));
+        setPreferredSize(new java.awt.Dimension(1350, 700));
         setResizable(false);
         setSize(new java.awt.Dimension(0, 0));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lab1.setFont(new java.awt.Font("Palatino Linotype", 1, 23)); // NOI18N
+        lab1.setBackground(new java.awt.Color(204, 204, 255));
+        lab1.setFont(new java.awt.Font("Castellar", 1, 48)); // NOI18N
         lab1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lab1.setText("WELCOME TO BANK");
+        lab1.setOpaque(true);
+        getContentPane().add(lab1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 660, 90));
 
+        create.setBackground(new java.awt.Color(102, 102, 102));
         create.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         create.setText("Create an Account");
+        create.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        create.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         create.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 createMouseClicked(evt);
@@ -62,86 +78,90 @@ public class Project extends javax.swing.JFrame {
                 createActionPerformed(evt);
             }
         });
+        getContentPane().add(create, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 280, 280, 60));
 
+        withdraw.setBackground(new java.awt.Color(102, 102, 102));
         withdraw.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         withdraw.setText("Withdraw");
+        withdraw.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        withdraw.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         withdraw.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 withdrawActionPerformed(evt);
             }
         });
+        getContentPane().add(withdraw, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 360, 280, 60));
 
+        deposit.setBackground(new java.awt.Color(102, 102, 102));
         deposit.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         deposit.setText("Deposit");
+        deposit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        deposit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         deposit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 depositActionPerformed(evt);
             }
         });
+        getContentPane().add(deposit, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 440, 280, 60));
 
+        balance.setBackground(new java.awt.Color(102, 102, 102));
         balance.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         balance.setText("Check Balance");
+        balance.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        balance.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         balance.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 balanceActionPerformed(evt);
             }
         });
+        getContentPane().add(balance, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 520, 280, 60));
 
+        transfer.setBackground(new java.awt.Color(102, 102, 102));
         transfer.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         transfer.setText("Transfer Money");
+        transfer.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        transfer.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         transfer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 transferActionPerformed(evt);
             }
         });
+        getContentPane().add(transfer, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 600, 280, 60));
 
+        img.setBackground(java.awt.Color.gray);
         img.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logo.png"))); // NOI18N
+        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/withdraw (2).png"))); // NOI18N
         img.setOpaque(true);
+        getContentPane().add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 360, 70, 60));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addComponent(img, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lab1, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(263, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(withdraw, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(deposit, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(balance, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(transfer, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(create, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(264, 264, 264))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(119, Short.MAX_VALUE)
-                        .addComponent(lab1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(img, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(create, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(withdraw, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(deposit, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(balance, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(transfer, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47))
-        );
+        img2.setBackground(java.awt.Color.gray);
+        img2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        img2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/deposit1.png"))); // NOI18N
+        img2.setOpaque(true);
+        getContentPane().add(img2, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 440, 70, 60));
+
+        img3.setBackground(java.awt.Color.gray);
+        img3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        img3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/check1.png"))); // NOI18N
+        img3.setOpaque(true);
+        getContentPane().add(img3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 520, 70, 60));
+
+        img4.setBackground(java.awt.Color.gray);
+        img4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        img4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/transfer1.png"))); // NOI18N
+        img4.setOpaque(true);
+        getContentPane().add(img4, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 600, 70, 60));
+
+        img5.setBackground(java.awt.Color.gray);
+        img5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        img5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/create.png"))); // NOI18N
+        img5.setOpaque(true);
+        getContentPane().add(img5, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 280, 70, 60));
+
+        img7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        img7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Webp.net-resizeimage (2).png"))); // NOI18N
+        img7.setOpaque(true);
+        getContentPane().add(img7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 300, 310));
 
         pack();
         setLocationRelativeTo(null);
@@ -186,6 +206,7 @@ public class Project extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
+        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -205,11 +226,12 @@ public class Project extends javax.swing.JFrame {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Project().setVisible(true);
                 
+                new Project().setVisible(true);
             }
             
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -217,6 +239,11 @@ public class Project extends javax.swing.JFrame {
     private javax.swing.JButton create;
     private javax.swing.JButton deposit;
     private javax.swing.JLabel img;
+    private javax.swing.JLabel img2;
+    private javax.swing.JLabel img3;
+    private javax.swing.JLabel img4;
+    private javax.swing.JLabel img5;
+    private javax.swing.JLabel img7;
     private javax.swing.JLabel lab1;
     private javax.swing.JButton transfer;
     private javax.swing.JButton withdraw;

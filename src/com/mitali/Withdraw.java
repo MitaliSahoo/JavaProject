@@ -5,6 +5,7 @@
  */
 package com.mitali;
 
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -24,6 +25,7 @@ public class Withdraw extends javax.swing.JFrame {
      */
     public Withdraw() {
         initComponents();
+        getContentPane().setBackground(Color.gray);
     }
 
     /**
@@ -45,20 +47,30 @@ public class Withdraw extends javax.swing.JFrame {
         result1 = new javax.swing.JLabel();
         submit = new javax.swing.JButton();
         clear = new javax.swing.JButton();
-        back = new javax.swing.JButton();
+        img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1350, 750));
+        setPreferredSize(new java.awt.Dimension(1350, 750));
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        account.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        account.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         account.setText("Account no");
+        getContentPane().add(account, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 179, 45));
 
-        withdraw.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        withdraw.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         withdraw.setText("Enter Amount to be withdrawn");
+        getContentPane().add(withdraw, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, -1, 45));
 
-        amount.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        result2.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
+        getContentPane().add(result2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 360, 480, 70));
+
+        amount.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         amount.setText("Amount ");
+        getContentPane().add(amount, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 460, 179, 45));
 
+        withdraw1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         withdraw1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 withdraw1MouseClicked(evt);
@@ -74,109 +86,65 @@ public class Withdraw extends javax.swing.JFrame {
                 withdraw1KeyTyped(evt);
             }
         });
+        getContentPane().add(withdraw1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 280, 383, 60));
 
+        account1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         account1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 account1KeyTyped(evt);
             }
         });
+        getContentPane().add(account1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 110, 383, 60));
 
         amount1.setEditable(false);
+        amount1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         amount1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 amount1ActionPerformed(evt);
             }
         });
+        getContentPane().add(amount1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 450, 383, 60));
 
+        result1.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
+        getContentPane().add(result1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 480, 70));
+
+        submit.setBackground(new java.awt.Color(0, 0, 0));
         submit.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        submit.setForeground(new java.awt.Color(255, 255, 255));
         submit.setText("Withdraw");
         submit.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        submit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        submit.setOpaque(true);
         submit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitActionPerformed(evt);
             }
         });
+        getContentPane().add(submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 610, 150, 60));
 
         clear.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         clear.setText("Clear");
         clear.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        clear.setContentAreaFilled(false);
+        clear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearActionPerformed(evt);
             }
         });
+        getContentPane().add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 610, 160, 60));
 
-        back.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        back.setText("BACK");
-        back.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backActionPerformed(evt);
+        img.setBackground(java.awt.Color.gray);
+        img.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/back1.png"))); // NOI18N
+        img.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        img.setOpaque(true);
+        img.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imgMouseClicked(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(withdraw, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(withdraw1, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(account, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
-                                    .addComponent(amount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(account1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(amount1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addComponent(result1, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(result2, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(24, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(143, 143, 143)
-                .addComponent(clear, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(161, 161, 161))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(account, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(account1, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE))
-                .addGap(24, 24, 24)
-                .addComponent(result1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(withdraw1, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
-                    .addComponent(withdraw, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(27, 27, 27)
-                .addComponent(result2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(amount1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(amount, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(submit, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
-                    .addComponent(clear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(52, Short.MAX_VALUE))
-        );
+        getContentPane().add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 90, 80));
 
         pack();
         setLocationRelativeTo(null);
@@ -275,10 +243,10 @@ public class Withdraw extends javax.swing.JFrame {
         } 
     }//GEN-LAST:event_submitActionPerformed
 
-    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+    private void imgMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgMouseClicked
         this.setVisible(false);
         new Project().setVisible(true);
-    }//GEN-LAST:event_backActionPerformed
+    }//GEN-LAST:event_imgMouseClicked
 
     /**
      * @param args the command line arguments
@@ -320,8 +288,8 @@ public class Withdraw extends javax.swing.JFrame {
     private javax.swing.JTextField account1;
     private javax.swing.JLabel amount;
     private javax.swing.JTextField amount1;
-    private javax.swing.JButton back;
     private javax.swing.JButton clear;
+    private javax.swing.JLabel img;
     private javax.swing.JLabel result1;
     private javax.swing.JLabel result2;
     private javax.swing.JButton submit;

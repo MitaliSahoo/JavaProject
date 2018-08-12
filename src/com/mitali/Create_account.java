@@ -5,6 +5,7 @@
  */
 package com.mitali;
 
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -24,6 +25,7 @@ public class Create_account extends javax.swing.JFrame {
      */
     public Create_account() {
         initComponents();
+        getContentPane().setBackground(Color.gray);
     }
 
     /**
@@ -57,207 +59,148 @@ public class Create_account extends javax.swing.JFrame {
         accountno1 = new javax.swing.JTextField();
         type1 = new javax.swing.JRadioButton();
         type2 = new javax.swing.JRadioButton();
-        back = new javax.swing.JButton();
         result = new javax.swing.JLabel();
+        img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1350, 750));
+        setPreferredSize(new java.awt.Dimension(1350, 750));
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        fname.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        fname.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         fname.setText("First Name");
+        getContentPane().add(fname, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 160, 44));
 
-        phone.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        phone.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         phone.setText("Phone no.");
+        getContentPane().add(phone, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 510, 160, 44));
 
-        gender.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        gender.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         gender.setText("Gender");
+        getContentPane().add(gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, 160, 44));
 
-        lname.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lname.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         lname.setText("Last Name");
+        getContentPane().add(lname, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, 160, 44));
 
-        address.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        address.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         address.setText("Address");
+        getContentPane().add(address, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, 160, 44));
 
-        type.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        type.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         type.setText("Type of Account");
+        getContentPane().add(type, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 280, 190, 44));
 
+        fname1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         fname1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 fname1KeyTyped(evt);
             }
         });
+        getContentPane().add(fname1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 120, 493, 44));
 
+        lname1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lname1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 lname1KeyTyped(evt);
             }
         });
+        getContentPane().add(lname1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 170, 493, 44));
 
+        phone1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         phone1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 phone1KeyTyped(evt);
             }
         });
+        getContentPane().add(phone1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 510, 493, 44));
 
         address1.setColumns(20);
+        address1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         address1.setRows(5);
         jScrollPane1.setViewportView(address1);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 340, 493, 152));
+
         buttonGroup1.add(male);
-        male.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        male.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         male.setText("Male");
+        getContentPane().add(male, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 230, -1, -1));
 
         buttonGroup1.add(female);
-        female.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        female.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         female.setText("Female");
         female.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 femaleActionPerformed(evt);
             }
         });
+        getContentPane().add(female, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 230, -1, -1));
 
         buttonGroup1.add(others);
-        others.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        others.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         others.setText("Others");
+        getContentPane().add(others, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 230, -1, -1));
 
+        submit.setBackground(new java.awt.Color(0, 0, 0));
         submit.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        submit.setForeground(new java.awt.Color(255, 255, 255));
         submit.setText("Submit");
         submit.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        submit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         submit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitActionPerformed(evt);
             }
         });
+        getContentPane().add(submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 650, 135, 46));
 
         clear.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         clear.setText("Clear");
         clear.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        clear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearActionPerformed(evt);
             }
         });
+        getContentPane().add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 650, 135, 46));
 
-        accountno.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        accountno.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         accountno.setText("Account No.");
+        getContentPane().add(accountno, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, 160, 42));
 
+        accountno1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         accountno1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 accountno1KeyTyped(evt);
             }
         });
+        getContentPane().add(accountno1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 70, 493, 42));
 
         buttonGroup2.add(type1);
-        type1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        type1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         type1.setText("Saving account");
+        getContentPane().add(type1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 280, -1, -1));
 
         buttonGroup2.add(type2);
-        type2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        type2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         type2.setText("Current account");
+        getContentPane().add(type2, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 280, -1, -1));
+        getContentPane().add(result, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 560, 540, 80));
 
-        back.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        back.setText("BACK");
-        back.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backActionPerformed(evt);
+        img.setBackground(java.awt.Color.gray);
+        img.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/back1.png"))); // NOI18N
+        img.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        img.setOpaque(true);
+        img.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imgMouseClicked(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(accountno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lname, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
-                                .addComponent(address, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
-                                .addComponent(gender, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
-                                .addComponent(fname, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE))
-                            .addComponent(phone, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(type, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(fname1)
-                            .addComponent(jScrollPane1)
-                            .addComponent(lname1)
-                            .addComponent(accountno1)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(male)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(2, 2, 2)
-                                        .addComponent(type1)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(type2)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(female)
-                                        .addGap(80, 80, 80)
-                                        .addComponent(others)))
-                                .addGap(80, 80, 80))
-                            .addComponent(phone1)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(145, 145, 145)
-                        .addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(50, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(145, 145, 145)
-                .addComponent(clear, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(151, 151, 151))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(accountno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(accountno1, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(fname1, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-                    .addComponent(fname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(9, 9, 9)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lname, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lname1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(gender, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(male)
-                    .addComponent(female)
-                    .addComponent(others))
-                .addGap(13, 13, 13)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(type, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(type1)
-                        .addComponent(type2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(address, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(phone, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(phone1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(clear, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        getContentPane().add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 90, 80));
 
         pack();
         setLocationRelativeTo(null);
@@ -382,10 +325,10 @@ public class Create_account extends javax.swing.JFrame {
         buttonGroup2.clearSelection();
     }//GEN-LAST:event_clearActionPerformed
 
-    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+    private void imgMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgMouseClicked
         this.setVisible(false);
         new Project().setVisible(true);
-    }//GEN-LAST:event_backActionPerformed
+    }//GEN-LAST:event_imgMouseClicked
 
     /**
      * @param args the command line arguments
@@ -404,7 +347,6 @@ public class Create_account extends javax.swing.JFrame {
     private javax.swing.JTextField accountno1;
     private javax.swing.JLabel address;
     private javax.swing.JTextArea address1;
-    private javax.swing.JButton back;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JButton clear;
@@ -412,6 +354,7 @@ public class Create_account extends javax.swing.JFrame {
     private javax.swing.JLabel fname;
     private javax.swing.JTextField fname1;
     private javax.swing.JLabel gender;
+    private javax.swing.JLabel img;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lname;
     private javax.swing.JTextField lname1;

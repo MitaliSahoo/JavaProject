@@ -5,6 +5,7 @@
  */
 package com.mitali;
 
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -24,6 +25,7 @@ public class Deposit extends javax.swing.JFrame {
      */
     public Deposit() {
         initComponents();
+        getContentPane().setBackground(Color.gray);
     }
 
     /**
@@ -45,20 +47,27 @@ public class Deposit extends javax.swing.JFrame {
         output = new javax.swing.JLabel();
         deposit = new javax.swing.JButton();
         clear = new javax.swing.JButton();
-        back = new javax.swing.JButton();
+        img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1350, 750));
+        setPreferredSize(new java.awt.Dimension(1350, 750));
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        deposit3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        deposit3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         deposit3.setText("Enter amount to be deposited");
+        getContentPane().add(deposit3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 370, -1, 46));
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel2.setText("Account No");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, 164, 41));
 
-        account.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        account.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         account.setText("Amount");
+        getContentPane().add(account, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 540, 164, 46));
 
+        deposit2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         deposit2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 deposit2MouseClicked(evt);
@@ -69,117 +78,61 @@ public class Deposit extends javax.swing.JFrame {
                 deposit2KeyTyped(evt);
             }
         });
+        getContentPane().add(deposit2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 360, 360, 60));
 
+        account1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         account1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 account1KeyTyped(evt);
             }
         });
+        getContentPane().add(account1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 160, 360, 60));
 
         amount.setEditable(false);
+        amount.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         amount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 amountActionPerformed(evt);
             }
         });
+        getContentPane().add(amount, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 530, 360, 60));
 
+        output1.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
+        getContentPane().add(output1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, 460, 80));
+
+        output.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
+        getContentPane().add(output, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 240, 460, 80));
+
+        deposit.setBackground(new java.awt.Color(0, 0, 0));
         deposit.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        deposit.setForeground(new java.awt.Color(255, 255, 255));
         deposit.setText("Deposit");
         deposit.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        deposit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         deposit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 depositActionPerformed(evt);
             }
         });
+        getContentPane().add(deposit, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 650, 142, 53));
 
         clear.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         clear.setText("Clear");
         clear.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        clear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 650, 138, 53));
 
-        back.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        back.setText("BACK");
-        back.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backActionPerformed(evt);
+        img.setBackground(java.awt.Color.gray);
+        img.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/back1.png"))); // NOI18N
+        img.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        img.setOpaque(true);
+        img.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imgMouseClicked(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGap(0, 2, Short.MAX_VALUE)
-                                        .addComponent(deposit3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(deposit2)
-                                    .addComponent(account1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(account, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(amount, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(120, 120, 120)
-                        .addComponent(output, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(64, 64, 64))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(124, 124, 124)
-                        .addComponent(output1, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(201, 201, 201)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(197, 197, 197)
-                                .addComponent(clear, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(deposit, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(147, 147, 147)
-                        .addComponent(output, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(deposit3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(deposit2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(account1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(162, 162, 162)))
-                .addComponent(output1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(account, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(amount, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(clear, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(deposit, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46))
-        );
+        getContentPane().add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 90, 80));
 
         pack();
         setLocationRelativeTo(null);
@@ -253,10 +206,10 @@ public class Deposit extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_depositActionPerformed
 
-    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+    private void imgMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgMouseClicked
         this.setVisible(false);
         new Project().setVisible(true);
-    }//GEN-LAST:event_backActionPerformed
+    }//GEN-LAST:event_imgMouseClicked
 
     /**
      * @param args the command line arguments
@@ -297,11 +250,11 @@ public class Deposit extends javax.swing.JFrame {
     private javax.swing.JLabel account;
     private javax.swing.JTextField account1;
     private javax.swing.JTextField amount;
-    private javax.swing.JButton back;
     private javax.swing.JButton clear;
     private javax.swing.JButton deposit;
     private javax.swing.JTextField deposit2;
     private javax.swing.JLabel deposit3;
+    private javax.swing.JLabel img;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel output;
     private javax.swing.JLabel output1;
